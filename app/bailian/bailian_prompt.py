@@ -2,12 +2,12 @@
 from langchain_core.prompts import ChatPromptTemplate, ChatPromptTemplate, ChatMessagePromptTemplate, \
     FewShotPromptTemplate, PromptTemplate
 from langchain_openai import ChatOpenAI
-from pydantic import StrictStr
+from pydantic import SecretStr
 
 llm = ChatOpenAI(
     model="qwen3-max",
     base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
-    api_key=StrictStr("sk-86065a0d2d624a92aba2005fcf0d3436"),
+    api_key=SecretStr("sk-86065a0d2d624a92aba2005fcf0d3436"),
     streaming=True,
 )
 # system_message_template = ChatMessagePromptTemplate.from_template(
